@@ -1,7 +1,7 @@
 ({
   host: '0.0.0.0',
   balancer: 8000,
-  protocol: 'http',
+  protocol: 'http2',
   ports: [8001, 8002],
   nagle: false,
   timeouts: {
@@ -10,6 +10,7 @@
     stop: 5000,
     request: 5000,
     watch: 1000,
+    test: 10000,
   },
   queue: {
     concurrency: 1000,
