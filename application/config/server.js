@@ -10,7 +10,11 @@
     stop: 5000,
     request: 5000,
     watch: 1000,
+<<<<<<< HEAD
     test: 10000,
+=======
+    test: 60000,
+>>>>>>> 690cf409817035239ff95bb7fe7bde40addb2ff0
   },
   queue: {
     concurrency: 1000,
