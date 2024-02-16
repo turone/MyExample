@@ -335,7 +335,7 @@ class Application {
     this.keyboard = new Keyboard(this);
     this.scroller = new Scroller(this);
     const protocol = location.protocol === 'http:' ? 'ws' : 'wss';
-    this.metacom = Metacom.create(`${protocol}://${location.host}/api`);
+    this.metacom = Metacom.create(`${protocol}://${location.host}/api33`);
     window.api = this.metacom.api;
     window.application = this;
   }
@@ -470,7 +470,7 @@ window.addEventListener('load', async () => {
   const application = new Application();
   await application.metacom.load('auth', 'console', 'example', 'files');
   const token = localStorage.getItem('metarhia.session.token');
-  /*if (token) {
+  if (token) {
     const res = await api.auth.restore({ token });
     application.logged = res.status === 'logged';
   }
@@ -479,7 +479,7 @@ window.addEventListener('load', async () => {
     if (res.token) {
       localStorage.setItem('metarhia.session.token', res.token);
     }
-  }*/
+  }
   const { text } = await api.console.content({ name: 'home' });
   application.print(text);
   commandLoop();

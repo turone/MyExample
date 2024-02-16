@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "strict": ["error", "never"]
+  },
+  "globals": {
+    "api": "readonly",
+    "rest": "readonly",
+    "application": "readonly",
+    "config": "readonly",
+    "node": "readonly",
+    "npm": "readonly",
+    "lib": "readonly",
+    "db": "readonly",
+    "bus": "readonly",
+    "domain": "readonly",
+    "metarhia": "readonly"
+  }
+}
