@@ -1,4 +1,4 @@
-import { Metacom } from '/metacom.js';
+import { Metacom } from '/test2/metacom.js';
 
 const ALPHA_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const ALPHA_LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -479,7 +479,7 @@ window.addEventListener('load', async () => {
     if (res.token) {
       localStorage.setItem('metarhia.session.token', res.token);
     }
-  }*/
+  }|*/
   const { text } = await api.console.content({ name: 'home' });
   application.print(text);
   commandLoop();
