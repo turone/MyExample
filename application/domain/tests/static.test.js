@@ -2,9 +2,23 @@
   name: 'Static server test',
 
   async run(t) {
+    await t.test('Test to serve without cache', async (t) => {
+      const filePath = './application/static/demo.txt';
+      const url = 'http://127.0.0.1:8000/demo.txt';
+      await node.fsp.unlink(filePath).catch(() => null);
+      t.after(() => {
+        node.fsp.unlink(filePath);
+      });
+      const data = node.crypto.randomBytes(1024 * 1024);
+      await node.fsp.writeFile(filePath, data);
+      const response = await fetch(url);
+      const msg = `status: ${response.status} expected: 200`;
+      node.assert.strictEqual(response.status, 200, msg);
+    });
+
     const tasks = [
       { url: '/', size: 2099 },
-      { url: '/console.js', size: 14366 },
+      { url: '/console.js', size: 14360 },
       { url: '/unknown', status: 404, size: 113 },
       { url: '/unknown.png', status: 404, size: 113 },
       { url: '/unknown/unknown', status: 404 },
