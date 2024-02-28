@@ -1,29 +1,30 @@
 interface Role {
-  roleId: number;
   name: string;
+  roleId?: string;
 }
 
 interface Account {
-  accountId: number;
   login: string;
   password: string;
+  rolesId: string[];
+  accountId?: string;
 }
 
 interface Country {
-  countryId: number;
   name: string;
+  countryId?: string;
 }
 
 interface City {
-  cityId: number;
   name: string;
-  countryId: number;
+  countryId: string;
+  cityId?: string;
 }
 
 interface Session {
-  sessionId: number;
-  accountId: number;
+  accountId: string;
   token: string;
   ip: string;
   data: string;
+  sessionId?: string;
 }

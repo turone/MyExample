@@ -1,0 +1,25 @@
+{
+  "extends": ["metarhia", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "id-denylist": [
+      2,
+      "application",
+      "node",
+      "npm",
+      "api",
+      "lib",
+      "db",
+      "domain",
+      "config",
+      "metarhia"
+    ]
+  }
+}
