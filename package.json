@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "impress": "file:../impress",
+    "metacom": "file:../metacom",
     "metaconfiguration": "^3.0.0",
     "metalog": "^3.1.14",
     "metaschema": "^2.1.5",
@@ -74,7 +75,7 @@
     "metautil": "^5.2.1",
     "metavm": "^1.4.1",
     "metawatch": "^1.2.1",
-    "metacom": "file:../metacom",
+    "mysql2": "^3.9.2",
     "pg": "^8.11.3",
     "redis": "^4.6.7",
     "ws": "^8.16.0"

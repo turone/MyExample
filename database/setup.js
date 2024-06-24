@@ -5,8 +5,8 @@ const path = require('node:path');
 const pg = require('pg');
 const metasql = require('metasql');
 const conf = require('../../myExampleConf/config');
-
-const DB = path.join(process.cwd(), '../application/db');
+//console.log(conf, '888');
+const DB = path.join(process.cwd(), '../database');
 const SCHEMAS = path.join(process.cwd(), '../application/schemas');
 
 const read = (name) => fsp.readFile(path.join(DB, name), 'utf8');
@@ -15,7 +15,8 @@ const execute = async (client, sql) => {
   try {
     await client.query(sql);
   } catch (err) {
-    console.error(err);
+    const { message, detail } = err;
+    console.error(`${sql}\n${message}\n${detail}\n`);
   }
 };
 
@@ -41,12 +42,12 @@ const executeFile = async (client, name) => {
   await fsp.rename(typesFile, domainTypes);
   const inst = new pg.Client({ ...conf.db, ...conf.pg });
   await inst.connect();
-  // await executeFile(inst, 'install.sql');
+  await executeFile(inst, 'install.sql');
   await inst.end();
   const dbSetup = new pg.Client(conf.db);
   await dbSetup.connect();
-  //await executeFile(dbSetup, 'structure.sql');
-  //await executeFile(dbSetup, 'data.sql');
+  await executeFile(dbSetup, 'structure.sql');
+  await executeFile(dbSetup, 'data.sql');
   await dbSetup.end();
   console.log('Environment is ready');
 })().catch((err) => {
