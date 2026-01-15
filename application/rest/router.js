@@ -1,5 +1,6 @@
 async (client, { path, getPar, verb, body }) => {
-  console.dir(path, getPar, verb, body);
+  console.table({ path, getPar, verb, body });
   // const { ip } = context.client;
-  return { data: 'ip ' };
+  console.log(domain.rest.pages.getPage('testREST'));
+  return { data: 'ip ' + domain.rest.pages.getPage('testREST') };
 };

@@ -6,7 +6,8 @@
     b: 'number',
   },
 
-  method: async ({ a, b }) => {
+  method: async ({ a, b }) => { 
+    console.log(a,b);
     if (a < 0) return new DomainError('EARGA');
     if (b > 500) return new DomainError('EARGB');
     if (Number.isNaN(a)) throw Error('Not a number: a');

@@ -1,8 +1,11 @@
 async () => {
+  // domain.rest.pages.setPage('testREST', 'testREST' + application.worker.id);
   if (!config.rest.cache) return;
+  if (application.worker.id === 'W2')
+    domain.rest.pages.setPage('testREST', 'testREST2');
   if (application.worker.id !== 'W1') return;
-  domain.rest.pages.setPage('testREST');
-  //console.log(domain.rest.pages.getPage('testREST'));
+
+  // console.log(domain.rest.pages.getPage('testREST'));
   try {
     const rest = {
       expr: 'REST',

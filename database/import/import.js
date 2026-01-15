@@ -162,7 +162,7 @@ const underlineToCamelCase = (str) => {
       SCHEMAS + '\\' + table + '.js',
       data(tableSchema[table]),
     );
-    console.log(table, data(tableSchema[table]));
+    //console.log(table, data(tableSchema[table]));
   }
   //console.log(tableTypes[tablesKeys[32]]);
   await fsp.writeFile('TableRenames.js', data(tableImport));

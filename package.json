@@ -72,7 +72,7 @@
     "metalog": "^3.1.14",
     "metaschema": "^2.1.5",
     "metasql": "^3.0.0-alpha.2",
-    "metautil": "^5.2.1",
+    "metautil": "^5.2.4",
     "metavm": "^1.4.1",
     "metawatch": "^1.2.1",
     "mysql2": "^3.9.2",
